@@ -15,9 +15,11 @@ void traversing(struct node *ptr)
     }
 }
 
-struct Node * insertAtFirst(struct Node *head, int data){
-    struct Node * ptr = (struct Node*) malloc(sizeof(struct Node));
+struct node * insertAtFirst(struct node *head, int data){
+    struct node * ptr = (struct node *) malloc(sizeof(struct node));
     ptr -> next= head ;
+    ptr-> data=data;
+    return ptr;
     }
 
 int main()
@@ -34,6 +36,8 @@ int main()
     second->next = third;
     third->data = 234;
     third->next = NULL;
+    traversing(head);
+    head=insertAtFirst(head,56);
     traversing(head);
     return 0;
 }
