@@ -21,7 +21,17 @@ struct node * insertAtFirst(struct node *head, int data){
     ptr-> data=data;
     return ptr;
     }
-
+struct node * insertAtIndex(struct node *head, int data, int index){
+    struct node * ptr = (struct node *) malloc(sizeof(struct node));
+    struct node * p = head;
+    int i=0;
+    while (i!=index-1)
+    {
+        p = p->next;
+        i++;
+    }
+    
+}
 int main()
 {
     struct node *head;
