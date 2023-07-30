@@ -4,8 +4,6 @@ using namespace std;
 struct node
 {
     int data;
-
-
     struct node *next;
 };
 
@@ -23,6 +21,7 @@ struct node * insertAtFirst(struct node *head, int data){
     ptr-> data=data;
     return ptr;
     }
+
 struct node * insertAtIndex(struct node *head, int data, int index){
     struct node * ptr = (struct node *) malloc(sizeof(struct node));
     struct node * p = head;
@@ -32,6 +31,10 @@ struct node * insertAtIndex(struct node *head, int data, int index){
         p = p->next;
         i++;
     }
+    ptr->data=data;
+    ptr->next=p->next;
+    p->next=ptr;
+    return head;
     
 }
 int main()
@@ -49,7 +52,9 @@ int main()
     third->data = 234;
     third->next = NULL;
     traversing(head);
-    head=insertAtFirst(head,56);
+    cout<<"new linked list"<<endl;
+    // head=insertAtFirst(head,56);
+    head=insertAtIndex(head,56,1);
     traversing(head);
     return 0;
 }
