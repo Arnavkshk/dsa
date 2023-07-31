@@ -21,6 +21,22 @@ struct node * insertAtFirst(struct node *head, int data){
     ptr-> data=data;
     return ptr;
     }
+struct node * insertAtEnd(struct node *head, int data){
+    struct node * ptr = (struct node *) malloc(sizeof(struct node));
+    ptr -> data= data ;
+    struct node * p = head;
+
+    while (p->next!=0){
+        p=p->next;
+    }
+    p->next=ptr;
+    ptr->next=NULL;
+    return head;
+    
+
+    ptr-> data=data;
+    return ptr;
+    }
 
 struct node * insertAtIndex(struct node *head, int data, int index){
     struct node * ptr = (struct node *) malloc(sizeof(struct node));
@@ -52,9 +68,15 @@ int main()
     third->data = 234;
     third->next = NULL;
     traversing(head);
-    cout<<"new linked list"<<endl;
-    // head=insertAtFirst(head,56);
-    head=insertAtIndex(head,56,1);
+    cout<<"new linked lists"<<endl;
+    cout<<"inserting at first"<<endl;
+    head=insertAtFirst(head,56);
+    traversing(head);
+    cout<<"inserting at index"<<endl;
+    head=insertAtIndex(head,50,1);
+    traversing(head);
+    cout<<"inserting in end"<<endl;
+    head=insertAtEnd(head,56);
     traversing(head);
     return 0;
 }
