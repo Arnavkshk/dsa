@@ -15,10 +15,23 @@ void traversing(struct node *ptr)
     }
 }
 
+
 struct  node * deleteFirst(struct node * head){
     struct node * ptr = head;
     head=head->next;
     free(ptr);
+    return head;
+}
+struct  node * deleteAtIndex(struct node * head, int index){
+    struct node *p = head;
+    struct node *q = head->next;
+    for (int i = 0; i < index-1; i++)
+    {
+        p=p->next;
+        q=q->next;
+    }
+    p->next=q->next;
+    free(q);
     return head;
 }
 
@@ -43,6 +56,7 @@ int main()
     cout<<"liniked list before deletion"<<endl;
     traversing(head);
     head=deleteFirst(head);
+    head= deleteAtIndex(head, 2);
     cout<<"liniked list after deletion"<<endl;
     traversing(head);
     return 0;
