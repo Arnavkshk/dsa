@@ -24,8 +24,8 @@ void print(node* head){
 node* takeinput(){
     int data;
     cin>>data;
-    node* head;
-    node* tail;
+    node* head=NULL;
+    node* tail=NULL;
     while(data != -1){
         node* newnode = new node(data);
         if(head==NULL){
@@ -33,11 +33,17 @@ node* takeinput(){
             tail=newnode;
         }
         else{
+            tail->next=newnode;
             tail=tail->next;
         }
+        cin>>data;
     }
+    return head;
 }
 
 int main(){
+    node* head =takeinput();
+    print(head);
+
     return 0;
 }
