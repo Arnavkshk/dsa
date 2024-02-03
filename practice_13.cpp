@@ -7,17 +7,17 @@ long long int sqrtInteger(int arr[],int n,int key){
     int e=n;
     long long int mid =  s+(e-s)/2;
     long long int ans=-1;
-    while(start<=end){
+    while(s<=e){
         if(arr[mid]==key){
             return mid;
         }
         if(key>arr[mid]){
-            start=mid+1;
+            s=mid+1;
         }
         else{
-            end=mid-1;
+            e=mid-1;
         }
-        mid=(start+end)/2;
+        mid=(s+e)/2;
     }
     return -1;
 
