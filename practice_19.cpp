@@ -1,7 +1,8 @@
+//program for array rotation
+
 #include <iostream>
 #include <vector>
 using namespace std;
-
 int main(){
     int n =3;
     vector<int> arr;
