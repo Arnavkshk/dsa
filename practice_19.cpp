@@ -17,8 +17,8 @@ int main(){
         temp[(i+n)%arr.size()]=arr[i];
     }
     arr=temp;
-    for(int i=0;i<arr.size();i++){
-        cout<<arr[i]<< " ";
+    for(auto &p : arr){
+        cout<<p<< " ";
     }
 
     return 0;
