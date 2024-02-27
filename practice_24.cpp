@@ -10,5 +10,6 @@ int main(){
     cout<<"address of num is "<<ptr<<endl;
     cout<<*ptr<<endl;
 
+
     return 0;
 }
