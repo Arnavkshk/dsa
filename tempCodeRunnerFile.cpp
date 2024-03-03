@@ -1,2 +1,2 @@
-nt n;
-    // cin>>n;
+
+    int size=3;
