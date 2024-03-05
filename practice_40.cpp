@@ -9,8 +9,6 @@ void bubblesort(int arr[],int size){
             swap(arr[i],arr[i+1]);
         }
         bubblesort(arr,size-1);
-    
-
 }
 
 int main(){
