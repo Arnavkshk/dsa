@@ -1,7 +1,21 @@
+// OOPS in c++
 #include <iostream>
 using namespace std;
 
+class Hero{
+public:
+    int health;
+    char level;
+    
+
+};
+
 int main(){
-    int arr[10]={1,2,3,4,5,6,7,8,9,10};
+    Hero ramesh;
+    ramesh.health =70;
+    ramesh.level = 'A';
+    cout<<"health is "<<ramesh.health<<endl;
+    cout<<"level is "<<ramesh.level<<endl;
+
     return 0;
 }
