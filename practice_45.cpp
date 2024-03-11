@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-class human{
+class Human{
     public:
     int height;
     int weight;
@@ -17,7 +17,7 @@ class human{
     }
 };
 
-class male : public human{
+class Male : public Human{
     public:
     string color;
     void sleep(){
@@ -27,7 +27,15 @@ class male : public human{
 
 int main(){
     
-
-
+    Male object1;
+    object1.age=20;
+    cout<<object1.getage()<<endl;
+    object1.height=170;
+    cout<<object1.height<<endl;
+    object1.setweight(60);
+    cout<<object1.weight<<endl;
+    object1.color="black";
+    cout<<object1.color<<endl;
+    object1.sleep();
     return 0;
 }
