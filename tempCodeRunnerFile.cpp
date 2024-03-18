@@ -1,2 +1,2 @@
 
-    int size=3;
+    s.pop();
