@@ -29,6 +29,9 @@ Node* insertintobst(Node* &root,int d){
     }
     return root;
 }
+void deletionofnode(){
+    
+}
 
 void takeInput(Node* &root){
     int data;
