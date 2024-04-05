@@ -29,8 +29,49 @@ Node* insertintobst(Node* &root,int d){
     }
     return root;
 }
-void deletionofnode(){
-    
+
+Node* minval(Node* root){
+    Node* temp = root;
+    while(temp->left!=NULL){
+        temp = temp->left;
+    }
+    return temp;
+}
+
+Node* deletionofnode(Node* root,int val){
+    if(root == NULL){
+        return root;
+    }
+    if(root->data==val){
+        if(root->left==NULL && root->right == NULL){
+            delete root;
+            return NULL;
+        }
+        if(root->left!=NULL && root->right == NULL){
+            Node* temp = root ->left;
+            delete root;
+            return temp;
+        }
+        if(root->left==NULL && root->right != NULL){
+            Node* temp = root ->right;
+            delete root;
+            return temp;
+        }
+        if(root->left != NULL && root->right != NULL){
+            int mini = minval(root->right)->data;
+            root->data = mini;
+            root->right = deletionofnode(root->right,mini);
+            return root;
+        }
+    }
+    else if(root->data>val){
+        root->left=deletionofnode(root->left,val);
+        return root;
+    }
+    else{
+        root->right=deletionofnode(root->right,val);
+        return root;
+    }
 }
 
 void takeInput(Node* &root){
@@ -74,6 +115,8 @@ int main(){
     takeInput(root);
     cout<<"printing the bst"<<endl;
     levelordertraversal(root);
-    
+    root = deletionofnode(root,10);
+    cout<<"min value is "<<minval(root)->data;
+
     return 0;
 }
